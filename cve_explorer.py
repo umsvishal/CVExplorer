@@ -5,6 +5,7 @@ import sys
 import os
 from threading import Thread
 from multiprocessing.dummy import Pool as Threads
+from dotenv import load_dotenv
 
 # ANSI color codes for console output
 BRed = "\033[1;31m"         # Red
@@ -63,11 +64,9 @@ def main():
 
     print(f"{BGreen}Each report is generated to a corresponding separate CSV file, Please check the Output Directory.\n{Reset}")
 
-# Reading API Key from Config file
-config_path = os.path.join(os.getcwd(), 'config')
-with open(config_path, mode='r') as keyReader:
-    shodanKey = keyReader.read()
-apiKey = shodanKey.split("=")[1].strip()
+# Reading API Key from .env file
+load_dotenv()
+apiKey = os.getenv('API_Key')
 
 def host_from_file(domainList):
     """
