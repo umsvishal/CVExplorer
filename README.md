@@ -29,6 +29,9 @@ Before using the Shodan CVE Explorer, ensure that you have:
   ```
 ## Configure Shodan API key:
 Open the .env file and replace API_Key with your actual Shodan API key.
+```
+API_Key=<Your Shodan API Key>
+```
 
 ## Usage
 Run the tool with the desired options:
